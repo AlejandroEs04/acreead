@@ -4,6 +4,7 @@ import { getServices } from "../api/ServiceApi";
 import { User, UserLogin, UserSignUp } from "../types";
 import { getAuth, login, registerUser } from "../api/AuthApi";
 import { useNavigate } from "react-router-dom";
+import { getProjects } from "../api/Project";
 
 type AppContextProps = {
     state: AppState
@@ -30,6 +31,17 @@ export const AppProvider = ({ children } : AppProviderProps) => {
 
             if(response)
                 dispatch({ type: 'set-services', payload: { services: response } })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleGetProjects = async() => {
+        try {
+            const response = await getProjects()
+
+            if(response)
+                dispatch({ type: 'set-project', payload: { projects: response } })
         } catch (error) {
             console.log(error)
         }
@@ -78,6 +90,7 @@ export const AppProvider = ({ children } : AppProviderProps) => {
 
     useEffect(() => {
         handleGetServices()
+        handleGetProjects()
 
         checkAuth()
     }, [])

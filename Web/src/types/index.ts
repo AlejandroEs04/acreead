@@ -51,3 +51,30 @@ export const LoginFormRes = z.object({
 })
 
 export type LoginFormRes = z.infer<typeof LoginFormRes>
+
+export type ContractEmail = {
+    name: string
+    lastName: string 
+    email: string
+    phoneNumber?: string 
+    company?: string 
+    meetingDate?: string
+}
+
+export type Project = {
+    project_id: number 
+    name: string
+    description: string 
+    customer_id: number
+    url: string
+    start_date: string
+    end_date: string 
+    status_id: string 
+    active: boolean
+    images: ProjectImage[]
+}
+
+export type ProjectImage = {
+    project_id: number 
+    image_url: string
+}

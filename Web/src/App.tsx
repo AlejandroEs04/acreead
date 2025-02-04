@@ -10,6 +10,7 @@ import Contract from "./pages/Contract"
 import { AppProvider } from "./context/AppContext"
 import AboutUs from "./pages/AboutUs"
 import Contact from "./pages/Contact"
+import Products from "./pages/Products"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<AppLayout />}>
             <Route index element={<Index />} />
             <Route path="services" element={<Services />} />
+            <Route path="products" element={<Products />} />
             <Route path="services/:id" element={<Service />} />
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact-us" element={<Contact />} />

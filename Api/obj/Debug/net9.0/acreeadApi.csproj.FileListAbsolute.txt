@@ -148,3 +148,7 @@ E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\obj\Debug\n
 E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\obj\Debug\net9.0\acreeadApi.pdb
 E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\obj\Debug\net9.0\acreeadApi.genruntimeconfig.cache
 E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\obj\Debug\net9.0\ref\acreeadApi.dll
+E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\obj\Debug\net9.0\acreeadApi.sourcelink.json
+E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\bin\Debug\net9.0\MailKit.dll
+E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\bin\Debug\net9.0\MimeKit.dll

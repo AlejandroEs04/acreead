@@ -14,6 +14,10 @@ const links : Link[] = [
     pathname: '/services'
   },
   {
+    name: 'Products', 
+    pathname: '/products'
+  },
+  {
     name: 'Portfolio', 
     pathname: '/portfolio'
   },

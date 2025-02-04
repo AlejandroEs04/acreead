@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 export type InputContainerProps = {
     name: string, 
-    placeholder: string, 
+    placeholder?: string, 
     type?: string, 
     label: string, 
     value: string | number,

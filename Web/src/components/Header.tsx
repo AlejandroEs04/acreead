@@ -30,19 +30,20 @@ const Header = ({ links } : HeaderProps ) => {
                         </button>
                     </div>
 
-                    <div className="">
+                    <div className="flex items-center gap-2">
                         <Link to={'/'} className="flex flex-shrink-0 items-center">
                             <img className="h-8 w-auto" src={`/AcreeadIconBlack.svg`} alt="Your Company" />
                         </Link>
-                    </div>
-
-                    <div className="hidden sm:ml-6 sm:flex w-full justify-center">
-                        <div className="flex space-x-4">
-                            {links.map(link => (
-                                <Link key={link.pathname} to={link.pathname} className={`rounded-md transition-colors px-3 py-2 text font-medium ${pathname === link.pathname ? 'text-blue-600 font-bold' : `hover:text-blue-800  'text-gray-700'}`}`}>{link.name}</Link>
-                            ))}
+                    
+                        <div className="hidden sm:flex w-full justify-center">
+                            <div className="flex space-x-2">
+                                {links.map(link => (
+                                    <Link key={link.pathname} to={link.pathname} className={`rounded-md transition-colors px-3 py-2 text font-medium ${pathname === link.pathname ? 'text-blue-600 font-bold' : `hover:text-blue-800  'text-gray-700'}`}`}>{link.name}</Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
+
                     
                     <div className={`absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0`}>
                         <Link

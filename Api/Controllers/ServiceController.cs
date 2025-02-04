@@ -49,7 +49,6 @@ public class ServiceController(IConfiguration config) : ControllerBase
         {
             throw;
         }
-        
     }
 
     [HttpPut("{id:int}")]

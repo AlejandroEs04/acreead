@@ -1,21 +1,24 @@
-import { Alert, Service, User } from "../types"
+import { Alert, Project, Service, User } from "../types"
 
 export type AppActions = 
     { type: 'set-services', payload: { services: Service[] } } |
     { type: 'set-alert', payload: { alert: Alert | null } } | 
     { type: 'reset-alert' } | 
-    { type: 'set-auth', payload: { user: User } }
+    { type: 'set-auth', payload: { user: User } } | 
+    { type: 'set-project', payload: { projects: Project[] } }
 
 export type AppState = {
     services: Service[]
     alert: Alert | null
     user: User | null
+    projects: Project[]
 }
 
 export const initialState : AppState = {
     services: [], 
     alert: null, 
-    user: null
+    user: null, 
+    projects: []
 }
 
 
@@ -46,6 +49,12 @@ export const AppReducer = (
         return {
             ...state, 
             user: actions.payload.user
+        }
+    }
+    if(actions.type === 'set-project') {
+        return {
+            ...state, 
+            projects: actions.payload.projects
         }
     }
 
