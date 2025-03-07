@@ -35,7 +35,7 @@ public class UserController(IConfiguration config) : ControllerBase
             byte[] passwordHash = _authHelper.GetPasswordHash(newuser.Password, passwordSalt);
 
             string queryInsert = @"
-                INSERT INTO [User] (name, lastName, email, phoneNumber, passwordHash, passwordSalt, companyName, rol_id)
+                INSERT INTO [User] (name, lastName, email, phoneNumber, passwordHash, passwordSalt, companyName, rolId)
                 VALUES (@name, @lastName, @email, @phoneNumber, @passwordHash, @passwordSalt, @companyName, 1)
             ";
 

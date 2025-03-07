@@ -22,7 +22,7 @@ public class EmailController(IConfiguration config) : ControllerBase
         string service = "N/A";
         if(string.IsNullOrEmpty(form.Email)) return StatusCode(401, "Email is required");
 
-        if(form.ServiceId != 0) service = _dapper.QuerySingle<string>($"SELECT name FROM Service WHERE service_id = @serviceId", new { @serviceId = form.ServiceId})!;
+        if(form.ServiceId != 0) service = _dapper.QuerySingle<string>($"SELECT name FROM Service WHERE serviceId = @serviceId", new { @serviceId = form.ServiceId})!;
 
         var emailSettings = config.GetSection("EmailSettings");
 
@@ -55,15 +55,15 @@ public class EmailController(IConfiguration config) : ControllerBase
 
     [AllowAnonymous]
     [HttpPost("Contract")]
-    public async Task<IActionResult> Contract (ContractEmailDto form)
+    public async Task<IActionResult> RequestContract (ContractEmailDto form)
     {
         string service = "N/A";
         string plan = "N/A";
 
         if(string.IsNullOrEmpty(form.Email)) return StatusCode(401, "Email is required");
 
-        if(form.ServiceId != 0) service = _dapper.QuerySingle<string>($"SELECT name FROM Service WHERE service_id = @serviceId", new { @serviceId = form.ServiceId})!;
-        if(form.PlanId != 0) plan = _dapper.QuerySingle<string>($"SELECT name FROM [Plan] WHERE plan_id = @planId", new { @planId = form.PlanId })!;
+        if(form.ServiceId != 0) service = _dapper.QuerySingle<string>($"SELECT name FROM Service WHERE serviceId = @serviceId", new { @serviceId = form.ServiceId})!;
+        if(form.PlanId != 0) plan = _dapper.QuerySingle<string>($"SELECT name FROM [Plan] WHERE planId = @planId", new { @planId = form.PlanId })!;
 
         var emailSettings = config.GetSection("EmailSettings");
 

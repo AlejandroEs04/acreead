@@ -25,7 +25,7 @@ function App() {
             <Route path="portfolio" element={<Portfolio />} />
             <Route path="contact-us" element={<Contact />} />
             <Route path="about-us" element={<AboutUs />} />
-            <Route path="contract/:service_id/:plan_id" element={<Contract />} />
+            <Route path="contract/:serviceId/:planId" element={<Contract />} />
           </Route>
 
           <Route path="/auth" element={<AppLayout />}>

@@ -19,7 +19,7 @@ public class AuthController(IConfiguration config) : ControllerBase
     [HttpPost]
     public IActionResult Login(AuthLoginDto userLogin)
     {
-        string queryLogin = "SELECT user_id, passwordHash, passwordSalt FROM [User] WHERE email = @email";
+        string queryLogin = "SELECT userId, passwordHash, passwordSalt FROM [User] WHERE email = @email";
         User? user = _dapper.QuerySingle<User>(queryLogin, new { userLogin.Email });
 
         if(user == null) return StatusCode(404, "User not found");
@@ -35,7 +35,7 @@ public class AuthController(IConfiguration config) : ControllerBase
         }
 
         return Ok(new Dictionary<string, string> {
-            {"token", _authHelper.CreateToken(user.User_id)}
+            {"token", _authHelper.CreateToken(user.UserId)}
         });
     }
 
@@ -43,9 +43,9 @@ public class AuthController(IConfiguration config) : ControllerBase
     public UserVw GetAuth()
     {
         string userId = User.FindFirst("userId")?.Value + "";
-        string userIdSql = @"SELECT * FROM [UserVw] WHERE user_id = @user_id";
+        string userIdSql = @"SELECT * FROM [UserVw] WHERE userId = @userId";
 
-        UserVw? user = _dapper.QuerySingle<UserVw>(userIdSql, new { @user_id = userId }) ?? throw new Exception("User not found");
+        UserVw? user = _dapper.QuerySingle<UserVw>(userIdSql, new { userId }) ?? throw new Exception("User not found");
         return user;
     }
 
@@ -54,9 +54,9 @@ public class AuthController(IConfiguration config) : ControllerBase
     {
         string userId = User.FindFirst("userId")?.Value + "";
 
-        string userIdSql = @"SELECT user_id FROM [User] WHERE user_id = @user_id";
+        string userIdSql = @"SELECT userId FROM [User] WHERE userId = @userId";
 
-        int userIdFromDB = _dapper.QuerySingle<int>(userIdSql, new { @user_id = userId });
+        int userIdFromDB = _dapper.QuerySingle<int>(userIdSql, new {  userId });
 
         return Ok(new Dictionary<string, string> {
             {"token", _authHelper.CreateToken(userIdFromDB)}

@@ -25,7 +25,7 @@ public class ProjectController(IConfiguration config) : ControllerBase
 
         foreach(Project project in projects)
         {
-            project.Images = images.Where(i => i.Project_id == project.Project_id);
+            project.Images = images.Where(i => i.ProjectId == project.ProjectId);
         }
 
         return projects;
@@ -36,8 +36,8 @@ public class ProjectController(IConfiguration config) : ControllerBase
     {
         try
         {
-            string queryInsert = "INSERT INTO Project (name, description, customer_id, url) VALUES (@name, @description, @customer_id, @url)";
-            _dapper.ExecuteSql(queryInsert, new { @name = project.Name, @description = project.Description, @customer_id = project.Customer_id, @url = project.Url });
+            string queryInsert = "INSERT INTO Project (name, description, customerId, url) VALUES (@name, @description, @customerId, @url)";
+            _dapper.ExecuteSql(queryInsert, new { @name = project.Name, @description = project.Description, @customerId = project.CustomerId, @url = project.Url });
         
             return Ok();
         }
@@ -65,8 +65,8 @@ public class ProjectController(IConfiguration config) : ControllerBase
     {
         try
         {
-            string queryInsert = "INSERT INTO ProjectImage (project_id, image_url) VALUES (@projectId, @imageUrl)";
-            _dapper.ExecuteSql(queryInsert, new { @projectId = image.Project_id, @imageUrl = image.Image_url });
+            string queryInsert = "INSERT INTO ProjectImage (projectId, imageUrl) VALUES (@projectId, @imageUrl)";
+            _dapper.ExecuteSql(queryInsert, new { @projectId = image.ProjectId, @imageUrl = image.ImageUrl });
 
             return Ok();
         }

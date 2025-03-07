@@ -6,6 +6,7 @@ export type ServiceCardContainerProps = {
 }
 
 const ServiceCardContainer = ({ service } : ServiceCardContainerProps) => {
+    console.log(service)
     return (
         <div className="bg-white rounded p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 shadow-md">
             <div className="lg:col-span-2">
@@ -21,14 +22,15 @@ const ServiceCardContainer = ({ service } : ServiceCardContainerProps) => {
 
                 <div className='mt-2'>
                     <Link 
-                        to={`/services/${service.service_id}`}
+                        to={`/services/${service.serviceId}`}
                         className="px-2 py-1 bg-blue-700 hover:bg-blue-800 transition-colors text-white rounded"
                     >Know more</Link>
                 </div>
             </div>
 
             <div>
-                <img src={`/service_${service.service_id}.jpg`} alt={`Imagen Servicio ${service.name}`} className='' />
+                <img src={`/service_${service.serviceId}.jpg`} alt={`Imagen Servicio ${service.name}`} className='' />
+                {service.serviceId}
             </div>
         </div>
     )

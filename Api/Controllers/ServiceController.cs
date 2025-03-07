@@ -27,7 +27,7 @@ public class ServiceController(IConfiguration config) : ControllerBase
 
         foreach(Service service in services)
         {
-            service.Plans = plans.Where(p => p.Service_id == service.Service_id);
+            service.Plans = plans.Where(p => p.ServiceId == service.ServiceId);
         }
 
         return services;
@@ -64,9 +64,9 @@ public class ServiceController(IConfiguration config) : ControllerBase
                     SET 
                         name = @name, 
                         description = @description
-                WHERE service_id = @service_id";
+                WHERE serviceId = @serviceId";
 
-            _dapper.ExecuteSql(queryUpdate, new { @name = updateService.Name, @description = updateService.Description, @service_id = id });
+            _dapper.ExecuteSql(queryUpdate, new { @name = updateService.Name, @description = updateService.Description, @serviceId = id });
             return Ok();
         }
         catch (Exception)
@@ -82,9 +82,9 @@ public class ServiceController(IConfiguration config) : ControllerBase
 
         try
         {
-            string queryDelete = "DELETE FROM [Service] WHERE service_id = @service_id";
+            string queryDelete = "DELETE FROM [Service] WHERE serviceId = @serviceId";
 
-            _dapper.ExecuteSql(queryDelete, new { @service_id = id });
+            _dapper.ExecuteSql(queryDelete, new { @serviceId = id });
             return Ok();
         }
         catch (Exception)
@@ -94,13 +94,13 @@ public class ServiceController(IConfiguration config) : ControllerBase
     }
 
     [HttpPost("{id:int}/Plan")]
-    public IActionResult AddPlan (int id, int plan_id)
+    public IActionResult AddPlan (int id, int planId)
     {
         try
         {
-            string queryAddPlan = "INSERT INTO [ServicePlan] (service_id, plan_id) VALUES (@service_id, @plan_id)";
+            string queryAddPlan = "INSERT INTO [ServicePlan] (serviceId, planId) VALUES (@serviceId, @planId)";
 
-            _dapper.ExecuteSql(queryAddPlan, new { plan_id, @service_id = id });
+            _dapper.ExecuteSql(queryAddPlan, new { planId, @serviceId = id });
             return Ok();
         }
         catch (Exception)

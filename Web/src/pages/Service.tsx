@@ -15,7 +15,7 @@ const Service = () => {
 
     useEffect(() => {
         if (id)
-            setCurrentService(state.services.filter(service => service.service_id === +id)[0])
+            setCurrentService(state.services.filter(service => service.serviceId === +id)[0])
     }, [state.services, id])
 
     return (
@@ -29,7 +29,7 @@ const Service = () => {
                     <div className="flex gap-5 mt-2">
                         {currentService.plans.map(plan => (
                             <div
-                                key={plan.plan_id} 
+                                key={plan.planId} 
                                 className={`
                                     ${currentService.plans.length == 2 && 'w-1/2'} 
                                     ${currentService.plans.length == 3 && 'w-1/3'} 
@@ -54,7 +54,7 @@ const Service = () => {
                                 <div className="flex gap-2">
                                     <Button 
                                         onClick={() => {
-                                            navigate(`/contract/${currentService.service_id}/${plan.plan_id}`)
+                                            navigate(`/contract/${currentService.serviceId}/${plan.planId}`)
                                         }}
                                         text="Contract"
                                     />

@@ -12,7 +12,7 @@ const ContactForm = () => {
         email: '', 
         phone_number: '', 
         message: '', 
-        service_id: 0
+        serviceId: 0
     })
 
     const handleChange = (e : ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLSelectElement>) => {
@@ -37,7 +37,7 @@ const ContactForm = () => {
                 <InputContainer type="email" name="email" label="Email" placeholder="Ej. correo@acreead.com" value={contactForm.email} handleChange={handleChange} />
                 <InputContainer type="number" name="phone_number" label="Phone Number" placeholder="Ej. 8110368975" value={contactForm.phone_number} handleChange={handleChange} />
                 <TextareaContainer name="message" label="Message" value={contactForm.message} handleChange={handleChange} />
-                <SelectContainer name="service_id" label="Servicio de interes" options={state.services} handleChange={handleChange} />
+                <SelectContainer name="serviceId" label="Servicio de interes" options={state.services} handleChange={handleChange} />
 
                 <button type="submit" className="bg-gradient-to-r from-blue-600 to-blue-700 px-2 py-1 rounded w-full mt-5 text-white transition-all">Enviar</button>
             </form>

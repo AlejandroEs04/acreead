@@ -10,7 +10,7 @@ const Portfolio = () => {
 
             <div className="flex flex-col gap-4 mt-4">
                 {state.projects.length && state.projects.map(p => (
-                    <PortfolioItem project={p} key={p.project_id} />
+                    <PortfolioItem project={p} key={p.projectId} />
                 ))}
             </div>
         </>

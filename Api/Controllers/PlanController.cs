@@ -61,7 +61,7 @@ public class PlanController(IConfiguration config) : ControllerBase
                         price = @price,
                         startPrice = @startPrice,
                         active = @active
-                WHERE plan_id = @plan_id";
+                WHERE planId = @planId";
 
             _dapper.ExecuteSql(queryUpdate, 
                 new { 
@@ -70,7 +70,7 @@ public class PlanController(IConfiguration config) : ControllerBase
                     @price = updatePlan.Price, 
                     @startPrice = updatePlan.StartPrice, 
                     @active = updatePlan.Active, 
-                    @plan_id = id 
+                    @planId = id 
                 });
             return Ok();
         }
@@ -87,9 +87,9 @@ public class PlanController(IConfiguration config) : ControllerBase
 
         try
         {
-            string queryDelete = "DELETE FROM [Plan] WHERE plan_id = @plan_id";
+            string queryDelete = "DELETE FROM [Plan] WHERE planId = @planId";
 
-            _dapper.ExecuteSql(queryDelete, new { @plan_id = id });
+            _dapper.ExecuteSql(queryDelete, new { @planId = id });
             return Ok();
         }
         catch (Exception)

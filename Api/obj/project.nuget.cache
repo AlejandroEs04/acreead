@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cFcoFm9JWss=",
+  "dgSpecHash": "HllNksO/Jv0=",
   "success": true,
   "projectFilePath": "E:\\Users\\Default\\Documents\\Development Projects\\Projects\\acreead\\Api\\acreeadApi.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,8 @@
     "C:\\Users\\2004e\\.nuget\\packages\\microsoft.openapi\\1.6.22\\microsoft.openapi.1.6.22.nupkg.sha512",
     "C:\\Users\\2004e\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\2004e\\.nuget\\packages\\mimekit\\4.10.0\\mimekit.4.10.0.nupkg.sha512",
+    "C:\\Users\\2004e\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\2004e\\.nuget\\packages\\stripe.net\\47.3.0\\stripe.net.47.3.0.nupkg.sha512",
     "C:\\Users\\2004e\\.nuget\\packages\\swashbuckle.aspnetcore\\7.2.0\\swashbuckle.aspnetcore.7.2.0.nupkg.sha512",
     "C:\\Users\\2004e\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\7.2.0\\swashbuckle.aspnetcore.swagger.7.2.0.nupkg.sha512",
     "C:\\Users\\2004e\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\7.2.0\\swashbuckle.aspnetcore.swaggergen.7.2.0.nupkg.sha512",

@@ -11,7 +11,7 @@ const Services = () => {
             <div className="flex flex-col gap-5 mt-2">
                 {state.services.map(service => (
                     <ServiceCardContainer
-                        key={service.service_id}
+                        key={service.serviceId}
                         service={service}
                     />
                 ))}

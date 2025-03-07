@@ -152,3 +152,5 @@ E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\obj\Debug\n
 E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\bin\Debug\net9.0\MailKit.dll
 E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\bin\Debug\net9.0\MimeKit.dll
+E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\bin\Debug\net9.0\Newtonsoft.Json.dll
+E:\Users\Default\Documents\Development Projects\Projects\acreead\Api\bin\Debug\net9.0\Stripe.net.dll

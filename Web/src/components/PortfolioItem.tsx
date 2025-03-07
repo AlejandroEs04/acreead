@@ -25,7 +25,7 @@ export default function PortfolioItem({ project } : PortfolioItemProps) {
             <div className='w-full md:w-1/2 lg:w-2/5'>
                 <Swiper navigation={true} modules={[Navigation]}>
                     {project.images.map(i => (
-                        <SwiperSlide key={i.image_url}><img src={i.image_url} alt="Main Faster Depot" /></SwiperSlide>
+                        <SwiperSlide key={i.imageUrl}><img src={i.imageUrl} alt="Main Faster Depot" /></SwiperSlide>
                     ))}
                 </Swiper>
             </div>

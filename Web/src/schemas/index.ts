@@ -12,8 +12,8 @@ export const planSchema = z.object({
   
 const planServiceSchema = z.object({
     id: z.number(),
-    service_id: z.number(),
-    plan_id: z.number(),
+    serviceId: z.number(),
+    planId: z.number(),
     plan: planSchema,
 });
   

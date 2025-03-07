@@ -15,7 +15,7 @@ const Index = () => {
                     {state.services.slice(0,3).map(service => (
                         <ServiceContainer 
                             service={service}
-                            key={service.service_id}
+                            key={service.serviceId}
                         />
                     ))}
                 </div>

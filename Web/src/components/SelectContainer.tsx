@@ -20,7 +20,7 @@ const SelectContainer = ({ name, label, options, handleChange } : SelectContaine
             >
                 <option>Seleccione {label}</option>
                 {options.map(option => (
-                    <option key={option.service_id} value={option.service_id}>{option.name}</option>
+                    <option key={option.serviceId} value={option.serviceId}>{option.name}</option>
                 ))}
             </select>
         </div>

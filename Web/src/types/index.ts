@@ -1,8 +1,8 @@
 import { z } from 'zod'
 
 export type PlanService = {
-    plan_id: number
-    service_id: number 
+    planId: number
+    serviceId: number 
     name: string
     description: string 
     price: number 
@@ -10,7 +10,7 @@ export type PlanService = {
 }
 
 export type Service = {
-    service_id: number 
+    serviceId: number 
     name: string
     description: string 
     plans: PlanService[]
@@ -62,19 +62,19 @@ export type ContractEmail = {
 }
 
 export type Project = {
-    project_id: number 
+    projectId: number 
     name: string
     description: string 
-    customer_id: number
+    customerId: number
     url: string
     start_date: string
     end_date: string 
-    status_id: string 
+    statusId: string 
     active: boolean
     images: ProjectImage[]
 }
 
 export type ProjectImage = {
-    project_id: number 
-    image_url: string
+    projectId: number 
+    imageUrl: string
 }

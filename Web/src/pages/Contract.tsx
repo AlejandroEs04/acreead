@@ -18,7 +18,7 @@ export default function Contract() {
         company: ''
     })
     const [plan, setPlan] = useState<PlanService>()
-    const { service_id, plan_id } = useParams()
+    const { serviceId, planId } = useParams()
 
     const { state } = useApp()
 
@@ -28,11 +28,11 @@ export default function Contract() {
     }, [state.user])
 
     useEffect(() => {
-        if (service_id) setService(state.services.filter(service => service.service_id === +service_id)[0])
-    }, [state.services, service_id])
+        if (serviceId) setService(state.services.filter(service => service.serviceId === +serviceId)[0])
+    }, [state.services, serviceId])
 
     useEffect(() => {
-        if(service != null) setPlan(service?.plans.filter(plan => plan.plan_id === +plan_id!)[0])
+        if(service != null) setPlan(service?.plans.filter(plan => plan.planId === +planId!)[0])
     }, [service])
 
     console.log(state.user)
